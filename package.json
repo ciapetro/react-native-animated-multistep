@@ -1,5 +1,5 @@
 {
-  "name": "rn-multistep-ciapetro",
+  "name": "react-native-multistep-ciapetro",
   "version": "1.0.8",
   "description": "this a cool animated package for handle multi step screens of react native",
   "main": "index.js",

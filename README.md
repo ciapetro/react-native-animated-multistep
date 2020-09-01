@@ -8,11 +8,13 @@
 
 You can install this package with the following command:
 
-`yarn add react-native-animated-multistep`
+`yarn add react-native-multistep-ciapetro`
 
 or
 
-`npm install react-native-animated-multistep`
+`npm install react-native-multistep-ciapetro`
+
+This is a package adapted from `react-native-animated-multistep`
 
 ## How to use
 
@@ -21,7 +23,7 @@ you can also see this [example](https://github.com/samad324/react-native-multist
 ### In the top level component add
 
 ```js
-import AnimatedMultistep from "react-native-animated-multistep";
+import AnimatedMultistep from "react-native-multistep-ciapetro";
 import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
@@ -37,7 +39,7 @@ const allSteps = [
   { name: "step 1", component: Step1 },
   { name: "step 2", component: Step2 },
   { name: "step 3", component: Step3 },
-  { name: "step 4", component: Step4 }
+  { name: "step 4", component: Step4 },
 ];
 
 /* Define your class */
@@ -56,7 +58,7 @@ export default class App extends Component {
 
   /* define the method to be called when the wizard is finished */
 
-  finish = finalState => {
+  finish = (finalState) => {
     console.log(finalState);
   };
 
@@ -93,15 +95,15 @@ class step1 extends Component {
     super(props);
     this.state = {
       totalSteps: "",
-      currentStep: ""
+      currentStep: "",
     };
   }
 
-  static getDerivedStateFromProps = props => {
+  static getDerivedStateFromProps = (props) => {
     const { getTotalSteps, getCurrentStep } = props;
     return {
       totalSteps: getTotalSteps(),
-      currentStep: getCurrentStep()
+      currentStep: getCurrentStep(),
     };
   };
 
@@ -131,14 +133,14 @@ class step1 extends Component {
         </View>
         <TextInput
           style={styles.input}
-          onChangeText={text => this.setState({ text })}
+          onChangeText={(text) => this.setState({ text })}
           value={this.state.text}
           placeholder={"First Name"}
           placeholderTextColor="#fff"
         />
         <TextInput
           style={styles.input}
-          onChangeText={text => this.setState({ text })}
+          onChangeText={(text) => this.setState({ text })}
           value={this.state.text}
           placeholder={"Last Name"}
           placeholderTextColor="#fff"
@@ -188,17 +190,18 @@ Use this method to get total steps.
 
 ### Props
 
-| Props        | Type       | Notes                                                                                    | Required |
-| ------------ | ---------- | ---------------------------------------------------------------------------------------- | -------- |
-| steps        | `Array`    | array containing steps                                                                   | ✔️       |
-| onFinish     | `function` | a function, which will run when all steps are finish                                     | ❌       |
-| onNext       | `function` | a function, which will run when you go on next step                                      | ❌       |
-| onBack       | `function` | a function, which will run when you go on back step                                      | ❌       |
-| comeInOnNext | `String`   | define you animation type when the component comes in on next, default is `fadeInLeft`   | ❌       |
-| OutOnNext    | `String`   | define you animation type when the component goes out on next, default is `fadeOutRight` | ❌       |
-| comeInOnBack | `String`   | define you animation type when the component comes in on back, default is `fadeInRight`  | ❌       |
-| OutOnBack    | `String`   | define you animation type when the component goes out on next, default is `fadeOutLeft`  | ❌       |
-| duration    | `number`   | define you animation duration `duration`  | ❌       |
+| Props           | Type       | Notes                                                                                    | Required |
+| --------------- | ---------- | ---------------------------------------------------------------------------------------- | -------- |
+| steps           | `Array`    | array containing steps                                                                   | ✔️       |
+| onFinish        | `function` | a function, which will run when all steps are finish                                     | ❌       |
+| onNext          | `function` | a function, which will run when you go on next step                                      | ❌       |
+| onBack          | `function` | a function, which will run when you go on back step                                      | ❌       |
+| comeInOnNext    | `String`   | define you animation type when the component comes in on next, default is `fadeInLeft`   | ❌       |
+| OutOnNext       | `String`   | define you animation type when the component goes out on next, default is `fadeOutRight` | ❌       |
+| comeInOnBack    | `String`   | define you animation type when the component comes in on back, default is `fadeInRight`  | ❌       |
+| OutOnBack       | `String`   | define you animation type when the component goes out on next, default is `fadeOutLeft`  | ❌       |
+| timeTransition  | `number`   | define you animation duration                                                            | ❌       |
+| currentPosition | `number`   | define which step to jump to                                                             | ❌       |
 
 ### Note:
 
