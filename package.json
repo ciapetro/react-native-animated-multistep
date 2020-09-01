@@ -1,5 +1,5 @@
 {
-  "name": "react-native-animated-multistep",
+  "name": "rn-multistep-ciapetro",
   "version": "1.0.8",
   "description": "this a cool animated package for handle multi step screens of react native",
   "main": "index.js",
@@ -14,12 +14,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/samad324/react-native-animated-multistep.git"
+    "url": "git+https://github.com/ciapetro/react-native-animated-multistep.git"
   },
   "author": "Abdul Samad",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/samad324/react-native-animated-multistep/issues"
-  },
-  "homepage": "https://github.com/samad324/react-native-animated-multistep#readme"
+  "homepage": "https://github.com/ciapetro/react-native-animated-multistep#readme"
 }
